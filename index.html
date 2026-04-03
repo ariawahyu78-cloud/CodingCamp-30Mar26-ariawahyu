@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Course Revo U</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h1>EXPENSE & BUDGET VISUALIZER</h1>
+      <button id="theme-toggle" title="Ganti Mode">🌙 Dark</button>
+    </div>
+
+    <!-- Total Saldo -->
+    <div class="balance-box">
+      <span>Total Pengeluaran</span>
+      <h2 id="total-balance">Rp 0</h2>
+    </div>
+
+    <!-- Form Input -->
+    <div class="form-box">
+      <h3>Tambah Transaksi di sini</h3>
+      <input type="text" id="item-name" placeholder="Nama Item" />
+      <input type="text" id="item-amount" placeholder="Jumlah (Rp)"/>
+      <select id="item-category">
+        <option value="">-- Pilih Kategori --</option>
+        <option value="Makanan">Makanan</option>
+        <option value="Transportasi">Transportasi</option>
+        <option value="Hiburan">Hiburan</option>
+      </select>
+      <button id="add-btn">Tambah</button>
+      <p id="error-msg" class="error"></p>
+      <!-- Batas Pengeluaran -->
+      <div class="limit-row">
+        <label for="spending-limit">Batas Pengeluaran (Rp):</label>
+        <input type="text" id="spending-limit" placeholder="contoh: 500.000" />
+        <button id="set-limit-btn">Set</button>
+      </div>
+      <p id="limit-warning" class="limit-warning"></p>
+    </div>
+
+    <!-- Ringkasan Bulanan -->
+    <div class="summary-box">
+      <h3>Ringkasan Bulanan</h3>
+      <div id="monthly-summary"></div>
+    </div>
+
+    <!-- Grafik & Daftar -->
+    <div class="main-content">
+      <div class="chart-box">
+        <h3>Pengeluaran Berdasarkan Katagori</h3>
+        <canvas id="pie-chart"></canvas>
+        <p id="no-data-msg">Belum ada data.</p>
+      </div>
+
+      <div class="list-box">
+        <h3>Riwayat Transaksi</h3>
+        <ul id="transaction-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
